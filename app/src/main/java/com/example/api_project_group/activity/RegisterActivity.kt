@@ -1,4 +1,4 @@
-package com.example.api_project_group
+package com.example.api_project_group.activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
+import com.example.api_project_group.R
+import com.example.api_project_group.ViewModelUser
 import com.example.api_project_group.databinding.ActivityRegisterBinding
 
 class RegisterActivity : AppCompatActivity() {

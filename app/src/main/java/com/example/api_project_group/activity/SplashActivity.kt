@@ -1,4 +1,4 @@
-package com.example.api_project_group
+package com.example.api_project_group.activity
 
 import android.content.Context
 import android.content.Intent
@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import androidx.databinding.DataBindingUtil
+import com.example.api_project_group.R
 import com.example.api_project_group.databinding.ActivitySplashBinding
 
 class SplashActivity : AppCompatActivity() {
