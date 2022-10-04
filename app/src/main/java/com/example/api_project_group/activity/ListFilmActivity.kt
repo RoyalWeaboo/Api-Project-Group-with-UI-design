@@ -24,6 +24,8 @@ class ListFilmActivity : AppCompatActivity() {
 
         binding = ActivityListFilmBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        getDataFilm()
     }
 
     fun getDataFilm(){
