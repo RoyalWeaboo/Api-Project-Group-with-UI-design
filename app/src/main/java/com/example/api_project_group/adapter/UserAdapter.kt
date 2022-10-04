@@ -1,23 +1,22 @@
-package com.example.api_project_group
+package com.example.api_project_group.adapter
 
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.api_project_group.databinding.ActivityLoginBinding
+import com.example.api_project_group.model.ResponseDataUserItem
 
 class UserAdapter(var listUser : List<ResponseDataUserItem>): RecyclerView.Adapter<UserAdapter.ViewHolder>(){
     class ViewHolder(var binding : ActivityLoginBinding):RecyclerView.ViewHolder(binding.root) {
 
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserAdapter.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         var view = ActivityLoginBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: UserAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val id = listUser[position].id
         val name = listUser[position].name
         val username = listUser[position].username
