@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="user"
+            type="com.example.api_project_group.User" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:background="@color/green"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".RegisterActivity">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_margin="25dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textREGISTERRR"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-black"
+                android:text="Register"
+                android:textColor="@color/black"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:layout_marginTop="25dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:src="@drawable/register"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_marginVertical="25dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textREGISTERRR" />
+
+            <EditText
+                android:id="@+id/editUsername"
+                android:layout_marginTop="25dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Input Username"
+                android:inputType="text"
+                app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+            <EditText
+                android:id="@+id/editNama"
+                android:inputType="textEmailAddress"
+                android:hint="Input Name"
+                android:layout_marginTop="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/editUsername" />
+
+            <EditText
+                android:id="@+id/editPassword"
+                android:inputType="textPassword"
+                android:hint="Input Password"
+                android:layout_marginTop="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/editNama" />
+
+            <EditText
+                android:id="@+id/editConfirmPassword"
+                android:inputType="textPassword"
+                android:hint="Confirm Password"
+                android:layout_marginTop="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/editPassword" />
+
+            <Button
+                android:id="@+id/btnRegister"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/blue"
+                android:textSize="14sp"
+                android:text="Register"
+                android:textAllCaps="false"
+                app:layout_constraintBottom_toBottomOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
