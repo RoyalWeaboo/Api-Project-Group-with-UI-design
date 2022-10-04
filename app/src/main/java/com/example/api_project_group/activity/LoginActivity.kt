@@ -62,7 +62,7 @@ class LoginActivity : AppCompatActivity() {
                         for (i in 0 until respon!!.size){
                             if(respon[i].username.equals(username) && respon[i].password.equals(password)){
                                 toast("Login Success!")
-                                var pinda = Intent(this@LoginActivity, ListFilmActivity::class.java)
+                                var pinda = Intent(this@LoginActivity, MainActivity::class.java)
                                 startActivity(pinda)
                             }
                         }
