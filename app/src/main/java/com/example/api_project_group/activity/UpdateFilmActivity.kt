@@ -9,6 +9,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.api_project_group.databinding.ActivityUpdateFilmBinding
 import com.example.api_project_group.viewmodel.ViewModelFilm
+import kotlinx.android.synthetic.main.activity_add_film.*
 
 class UpdateFilmActivity : AppCompatActivity() {
 
@@ -27,9 +28,7 @@ class UpdateFilmActivity : AppCompatActivity() {
             var filmDesc = binding.descEditInput.text.toString()
 
             updateDataFilm(fetId, filmName, filmDirector, filmPict, filmDesc)
-
-            val pindah = Intent (this, MainActivity::class.java)
-            startActivity(pindah)
+            finish()
         }
     }
 
