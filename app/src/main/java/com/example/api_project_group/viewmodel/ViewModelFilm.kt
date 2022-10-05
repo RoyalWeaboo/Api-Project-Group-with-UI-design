@@ -130,10 +130,12 @@ class ViewModelFilm : ViewModel() {
                     }else{
                         addFilm.postValue(null)
                     }
+                    callApiFilm()
                 }
 
                 override fun onFailure(call: Call<RestponseDataFilmItem>, t: Throwable) {
                     addFilm.postValue(null)
+                    callApiFilm()
                 }
 
             })
@@ -151,10 +153,12 @@ class ViewModelFilm : ViewModel() {
                     }else{
                         updateFilm.postValue(null)
                     }
+                    callApiFilm()
                 }
 
                 override fun onFailure(call: Call<List<RestponseDataFilmItem>>, t: Throwable) {
                     updateFilm.postValue(null)
+                    callApiFilm()
                 }
 
             })
