@@ -1,4 +1,4 @@
 package com.example.api_project_group.adapter
 
-class FilmAdapter {
+class AdapterFilm {
 }
