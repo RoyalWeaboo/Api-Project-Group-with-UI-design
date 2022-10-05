@@ -18,31 +18,33 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        setVmtoAdapter()
+        setVmToAdapter()
     }
 
-    fun setVmtoAdapter(){
-        val viewModel = ViewModelProvider(this).get(ViewModelFilm::class.java)
+    private fun setVmToAdapter() {
+        val viewModel =ViewModelProvider(this).get(ViewModelFilm::class.java)
         viewModel.callApiFilm()
         viewModel.getliveDataFilm().observe(this, Observer {
-//            carAdapter = CarAdapter(it)
-            if ( it != null){
-                binding.rvFilm.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
-                binding.rvFilm.adapter = AdapterFilm(it)
+            filmAdapter = FilmAdapter(it)
+            if (it != null){
+                binding.rvFilm.layoutManager = LinearLayoutManager(
+                    this, LinearLayoutManager.VERTICAL, false
+                )
+                binding.rvFilm.adapter = FilmAdapter(it)
 
             }
 
-//            carAdapter.onDetail ={
-//                var getData = it
-//                var inten = Intent(this, DetailCarActivity::class.java)
-//                inten.putExtra("det",getData)
-//                startActivity(inten)
-//            }
+            filmAdapter.onDetail ={
+                var getData = it
+                var intent = Intent(this, DetailFIlmActivity::class.java)
+
+                intent.putExtra("det", getData)
+                startActivity(intent)
+            }
         })
     }
+
 }

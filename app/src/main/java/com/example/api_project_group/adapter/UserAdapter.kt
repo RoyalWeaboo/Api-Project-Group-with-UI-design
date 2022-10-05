@@ -5,7 +5,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.api_project_group.model.ResponseDataUserItem
 import com.example.api_project_group.databinding.ActivityLoginBinding
-import com.example.api_project_group.model.ResponseDataUserItem
 
 class UserAdapter(var listUser : List<ResponseDataUserItem>): RecyclerView.Adapter<UserAdapter.ViewHolder>(){
     class ViewHolder(var binding : ActivityLoginBinding):RecyclerView.ViewHolder(binding.root) {

@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.api_project_group.R
-import com.example.api_project_group.adapter.AdapterFilm
+import com.example.api_project_group.adapter.FilmAdapter
 import com.example.api_project_group.databinding.ActivityListFilmBinding
 import com.example.api_project_group.model.RestponseDataFilmItem
 import com.example.api_project_group.network.RetrofitFilm
@@ -38,7 +38,7 @@ class ListFilmActivity : AppCompatActivity() {
                     if (response.isSuccessful){
                         var dataFilm = response.body()
                         binding.rvFilm.layoutManager = LinearLayoutManager(this@ListFilmActivity, LinearLayoutManager.VERTICAL, false)
-                        binding.rvFilm.adapter = AdapterFilm(dataFilm!!)
+                        binding.rvFilm.adapter = FilmAdapter(dataFilm!!)
                     }else{
                         Toast.makeText(this@ListFilmActivity, "Failed to Load Data", Toast.LENGTH_SHORT).show()
                     }

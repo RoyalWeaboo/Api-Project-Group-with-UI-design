@@ -10,14 +10,12 @@ import retrofit2.Response
 
 class ViewModelFilm : ViewModel() {
 
-    lateinit var liveDataFilm : MutableLiveData<List<RestponseDataFilmItem>>
+    private lateinit var liveDataFilm : MutableLiveData<List<RestponseDataFilmItem>>
 
     init {
         liveDataFilm = MutableLiveData()
-//        addLiveDataCar = MutableLiveData()
-//        updLDcar = MutableLiveData()
-//        delCar = MutableLiveData()
     }
+
     fun getliveDataFilm() :MutableLiveData<List<RestponseDataFilmItem>>{
         return  liveDataFilm
     }
@@ -31,7 +29,7 @@ class ViewModelFilm : ViewModel() {
                 ) {
                     if (response.isSuccessful){
                         liveDataFilm.postValue(response.body())
-                    }else{
+                    } else {
                         liveDataFilm.postValue(null)
                     }
                 }
