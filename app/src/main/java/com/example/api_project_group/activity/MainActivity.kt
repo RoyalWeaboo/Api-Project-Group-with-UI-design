@@ -7,12 +7,15 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.api_project_group.R
-import com.example.api_project_group.adapter.AdapterFilm
+import com.example.api_project_group.adapter.FilmAdapter
 import com.example.api_project_group.databinding.ActivityMainBinding
 import com.example.api_project_group.viewmodel.ViewModelFilm
 
 class MainActivity : AppCompatActivity() {
-    lateinit var binding : ActivityMainBinding
+
+    private lateinit var binding : ActivityMainBinding
+    private lateinit var filmAdapter: FilmAdapter
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -22,6 +25,7 @@ class MainActivity : AppCompatActivity() {
 
         setVmtoAdapter()
     }
+
     fun setVmtoAdapter(){
         val viewModel = ViewModelProvider(this).get(ViewModelFilm::class.java)
         viewModel.callApiFilm()
