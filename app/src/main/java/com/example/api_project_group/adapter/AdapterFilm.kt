@@ -7,7 +7,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.api_project_group.activity.DetailFIlmActivity
+import com.example.api_project_group.activity.DetailFilmActivity
 import com.example.api_project_group.activity.UpdateFilmActivity
 import com.example.api_project_group.databinding.ItemFilmBinding
 import com.example.api_project_group.model.RestponseDataFilmItem
@@ -37,7 +37,7 @@ class AdapterFilm (var listFilm : List<RestponseDataFilmItem>): RecyclerView.Ada
         // Button detail
         holder.binding.klikDetail.setOnClickListener {
             val bundle = Bundle()
-            val intent = Intent(it.context, DetailFIlmActivity::class.java)
+            val intent = Intent(it.context, DetailFilmActivity::class.java)
             bundle.putInt("detail", listFilm[position].id)
             intent.putExtras(bundle)
             it.context.startActivity(intent)
