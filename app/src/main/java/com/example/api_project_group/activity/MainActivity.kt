@@ -26,6 +26,10 @@ class MainActivity : AppCompatActivity() {
         binding.mainToolbar.setTitle("List Film")
 
         setVmToAdapter()
+
+        binding.addButton.setOnClickListener {
+            startActivity(Intent(this, AddFilmActivity::class.java))
+        }
     }
 
     private fun setVmToAdapter() {

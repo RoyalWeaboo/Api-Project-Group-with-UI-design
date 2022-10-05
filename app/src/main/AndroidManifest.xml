@@ -16,6 +16,9 @@
         android:theme="@style/Theme.ApiProjectGroup.NoActionBar"
         tools:targetApi="31">
         <activity
+            android:name=".activity.AddFilmActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity.UpdateFilmActivity"
             android:exported="false" />
         <activity
