@@ -6,7 +6,7 @@
     <data>
         <variable
             name="user"
-            type="com.example.api_project_group.User" />
+            type="com.example.api_project_group.model.User" />
     </data>
 
     <FrameLayout

@@ -8,9 +8,9 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import com.example.api_project_group.R
-import com.example.api_project_group.ResponseDataUserItem
-import com.example.api_project_group.RetrofitClientUser
-import com.example.api_project_group.UserAdapter
+import com.example.api_project_group.model.ResponseDataUserItem
+import com.example.api_project_group.network.RetrofitClientUser
+import com.example.api_project_group.adapter.UserAdapter
 import com.example.api_project_group.databinding.ActivityLoginBinding
 import retrofit2.Call
 import retrofit2.Callback

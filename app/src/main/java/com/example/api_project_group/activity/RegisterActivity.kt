@@ -7,7 +7,7 @@ import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import com.example.api_project_group.R
-import com.example.api_project_group.ViewModelUser
+import com.example.api_project_group.viewmodel.ViewModelUser
 import com.example.api_project_group.databinding.ActivityRegisterBinding
 
 class RegisterActivity : AppCompatActivity() {

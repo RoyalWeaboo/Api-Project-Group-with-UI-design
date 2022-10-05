@@ -1,5 +1,7 @@
-package com.example.api_project_group
+package com.example.api_project_group.network
 
+import com.example.api_project_group.model.ResponseDataUserItem
+import com.example.api_project_group.model.User
 import retrofit2.Call
 import retrofit2.http.*
 

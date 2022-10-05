@@ -1,11 +1,10 @@
-package com.example.api_project_group
+package com.example.api_project_group.viewmodel
 
-import android.content.Intent
-import android.widget.Toast
-import androidx.core.content.ContextCompat.startActivity
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import org.json.JSONObject
+import com.example.api_project_group.model.ResponseDataUserItem
+import com.example.api_project_group.model.User
+import com.example.api_project_group.network.RetrofitClientUser
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
