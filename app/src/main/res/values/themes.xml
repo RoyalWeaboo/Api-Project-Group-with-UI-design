@@ -2,8 +2,8 @@
     <!-- Base application theme. -->
     <style name="Theme.ApiProjectGroup" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">#BA68C8</item>
-        <item name="colorPrimaryVariant">#9751A3</item>
+        <item name="colorPrimary">@color/blue</item>
+        <item name="colorPrimaryVariant">#7D84AE</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
