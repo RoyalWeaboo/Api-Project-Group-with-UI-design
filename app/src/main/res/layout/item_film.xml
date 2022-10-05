@@ -18,12 +18,11 @@
             android:id="@+id/klikDetail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
-
             <ImageView
                 android:id="@+id/imgFilm"
+                android:src="@drawable/ic_launcher_background"
                 android:layout_width="120dp"
-                android:layout_height="100dp"
-                android:src="@drawable/ic_launcher_background" />
+                android:layout_height="100dp"/>
             <LinearLayout
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="15dp"
@@ -54,13 +53,12 @@
                     android:layout_height="wrap_content"/>
             </LinearLayout>
         </RelativeLayout>
-
         <ImageView
             android:id="@+id/deleteFilm"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:src="@drawable/ic_delete" />
+            android:src="@drawable/ic_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
 
         <ImageView
             android:id="@+id/editFilm"
