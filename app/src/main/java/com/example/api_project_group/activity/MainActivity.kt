@@ -83,14 +83,5 @@ class MainActivity : AppCompatActivity() {
         viewModel.callApiFilm()
     }
 
-    private fun oke(){
-        filmAdapter.onDetail ={
-            var getData = it
-            var intent = Intent(this, DetailFilmActivity::class.java)
-            intent.putExtra("det", getData)
-            startActivity(intent)
-        }
-
-    }
 
 }
