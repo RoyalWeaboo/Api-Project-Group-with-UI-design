@@ -28,7 +28,7 @@ class UpdateFilmActivity : AppCompatActivity() {
 
     fun updateDataFilm(id : Int, name : String, director : String,  img : String, desc : String) {
         var viewModel = ViewModelProvider(this).get(ViewModelFilm :: class.java)
-        viewModel.updateApiFilm(id, name, director, img, desc)
+//        viewModel.updateApiFilm(id, name, director, img, desc)
         viewModel
     }
 }

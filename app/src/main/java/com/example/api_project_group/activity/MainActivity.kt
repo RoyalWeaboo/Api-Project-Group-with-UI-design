@@ -6,15 +6,14 @@ import android.os.Bundle
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.api_project_group.R
-import com.example.api_project_group.adapter.FilmAdapter
+import com.example.api_project_group.adapter.AdapterFilm
 import com.example.api_project_group.databinding.ActivityMainBinding
 import com.example.api_project_group.viewmodel.ViewModelFilm
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding : ActivityMainBinding
-    private lateinit var filmAdapter: FilmAdapter
+    private lateinit var filmAdapter: AdapterFilm
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,12 +27,12 @@ class MainActivity : AppCompatActivity() {
         val viewModel =ViewModelProvider(this).get(ViewModelFilm::class.java)
         viewModel.callApiFilm()
         viewModel.getliveDataFilm().observe(this, Observer {
-            filmAdapter = FilmAdapter(it)
+            filmAdapter = AdapterFilm(it)
             if (it != null){
                 binding.rvFilm.layoutManager = LinearLayoutManager(
                     this, LinearLayoutManager.VERTICAL, false
                 )
-                binding.rvFilm.adapter = FilmAdapter(it)
+                binding.rvFilm.adapter = AdapterFilm(it)
 
             }
 
