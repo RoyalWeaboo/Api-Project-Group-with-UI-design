@@ -84,7 +84,7 @@
                 android:id="@+id/btnRegister"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/blue"
+                android:backgroundTint="#BA68C8"
                 android:textSize="14sp"
                 android:text="Register"
                 android:textAllCaps="false"
