@@ -59,14 +59,15 @@
             android:src="@drawable/ic_delete"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
+
         <ImageView
-            android:id="@+id/editFIlm"
-            android:layout_marginTop="10dp"
-            android:layout_alignParentRight="true"
-            android:layout_below="@+id/deleteFilm"
-            android:src="@drawable/ic_edit"
+            android:id="@+id/editFilm"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/deleteFilm"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/ic_edit" />
 
     </RelativeLayout>
 
