@@ -56,5 +56,4 @@ class AdapterFilm (var listFilm : List<RestponseDataFilmItem>): RecyclerView.Ada
     override fun getItemCount(): Int {
         return listFilm.size
     }
-
 }

@@ -3,6 +3,7 @@ package com.example.api_project_group.viewmodel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.api_project_group.model.Film
+import com.example.api_project_group.model.PutFilmResponse
 import com.example.api_project_group.model.RestponseDataFilmItem
 import com.example.api_project_group.network.RetrofitFilm
 import kotlinx.coroutines.GlobalScope
@@ -15,13 +16,14 @@ class ViewModelFilm : ViewModel() {
 
     var liveDataFilm : MutableLiveData<List<RestponseDataFilmItem>>
     var deleteFilm : MutableLiveData<Int>
+    var updFilm : MutableLiveData<List<PutFilmResponse>>
     lateinit var addFilm : MutableLiveData<RestponseDataFilmItem>
     var loading = MutableLiveData<Boolean>()
 
     init {
         liveDataFilm = MutableLiveData()
         addFilm = MutableLiveData()
-//        updLDcar = MutableLiveData()
+        updFilm = MutableLiveData()
         deleteFilm = MutableLiveData()
         callApiFilm()
     }
@@ -35,6 +37,10 @@ class ViewModelFilm : ViewModel() {
 
     fun postDataFilm() : MutableLiveData<RestponseDataFilmItem>{
         return addFilm
+    }
+
+    fun updateDataFilm() : MutableLiveData<List<PutFilmResponse>> {
+        return updFilm
     }
 
     fun callApiFilm(){
@@ -129,6 +135,26 @@ class ViewModelFilm : ViewModel() {
                     addFilm.postValue(null)
                 }
 
+            })
+    }
+
+    fun updateApiFilm(id: Int, name : String, director : String, image : String, description : String) {
+        RetrofitFilm.instance.updateFilm(id, Film(name, director, image, description))
+            .enqueue(object : Callback<List<PutFilmResponse>> {
+                override fun onResponse(
+                    call: Call<List<PutFilmResponse>>,
+                    response: Response<List<PutFilmResponse>>
+                ) {
+                    if (response.isSuccessful) {
+                        updFilm.postValue(response.body())
+                    } else {
+                        updFilm.postValue(null)
+                    }
+                }
+
+                override fun onFailure(call: Call<List<PutFilmResponse>>, t: Throwable) {
+                    updFilm.postValue(null)
+                }
             })
     }
 

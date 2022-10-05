@@ -1,6 +1,7 @@
 package com.example.api_project_group.network
 
 import com.example.api_project_group.model.Film
+import com.example.api_project_group.model.PutFilmResponse
 import com.example.api_project_group.model.RestponseDataFilmItem
 import retrofit2.Call
 import retrofit2.http.*
@@ -19,4 +20,7 @@ interface RestfulAPIFilm {
 
     @POST("film")
     fun postFilm(@Body film : Film) : Call<RestponseDataFilmItem>
+
+    @PUT("film/{id}")
+    fun updateFilm(@Path("id") id: Int, @Body request : Film) : Call<List<PutFilmResponse>>
 }
