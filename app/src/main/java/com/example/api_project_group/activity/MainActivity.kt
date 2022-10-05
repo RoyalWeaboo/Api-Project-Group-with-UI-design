@@ -7,6 +7,7 @@ import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.api_project_group.R
 import com.example.api_project_group.adapter.AdapterFilm
 import com.example.api_project_group.databinding.ActivityMainBinding
 import com.example.api_project_group.viewmodel.ViewModelFilm
@@ -41,7 +42,7 @@ class MainActivity : AppCompatActivity() {
                     viewModel.callDeleteFilm(it)
                     viewModel.getdeleteFilm().observe(this, Observer {
                         if (it == null){
-                            Toast.makeText(this, "Deleted Film with id : $it", Toast.LENGTH_LONG).show()
+                            Toast.makeText(this, "Film Deleted", Toast.LENGTH_LONG).show()
                         }
                     })
                 }

@@ -19,9 +19,6 @@
             android:name=".activity.UpdateFilmActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.ListFilmActivity"
-            android:exported="true"></activity>
-        <activity
             android:name=".activity.DetailFilmActivity"
             android:exported="false" />
         <activity
