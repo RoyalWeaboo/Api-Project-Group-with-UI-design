@@ -1,5 +1,6 @@
 package com.example.api_project_group.activity
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.ViewModelProvider
@@ -21,6 +22,9 @@ class UpdateFilmActivity : AppCompatActivity() {
             var filmDirector = binding.directorEditInput.text.toString()
             var filmPict = binding.pictureEditInput.text.toString()
             var filmDesc = binding.descEditInput.text.toString()
+
+            val pindah = Intent (this, MainActivity::class.java)
+            startActivity(pindah)
 
 
         }
