@@ -12,8 +12,9 @@ import retrofit2.Response
 
 class ViewModelFilm : ViewModel() {
 
-    lateinit var liveDataFilm : MutableLiveData<List<RestponseDataFilmItem>>
+    var liveDataFilm : MutableLiveData<List<RestponseDataFilmItem>>
     var deleteFilm : MutableLiveData<Int>
+    var loading = MutableLiveData<Boolean>()
 
     init {
         liveDataFilm = MutableLiveData()
@@ -32,6 +33,7 @@ class ViewModelFilm : ViewModel() {
 
     fun callApiFilm(){
         GlobalScope.async {
+            loading.postValue(true)
             RetrofitFilm.instance.getAllFilm()
                 .enqueue(object : Callback<List<RestponseDataFilmItem>>{
                     override fun onResponse(
@@ -43,10 +45,12 @@ class ViewModelFilm : ViewModel() {
                         }else{
                             liveDataFilm.postValue(null)
                         }
+                        loading.postValue(false)
                     }
 
                     override fun onFailure(call: Call<List<RestponseDataFilmItem>>, t: Throwable) {
                         liveDataFilm.postValue(null)
+                        loading.postValue(false)
                     }
 
                 })
@@ -56,6 +60,7 @@ class ViewModelFilm : ViewModel() {
 
     fun callDeleteFilm(id: Int) {
         GlobalScope.async {
+            loading.postValue(true)
             RetrofitFilm.instance.deleteFilm(id)
                 .enqueue(object : Callback<Int> {
                     override fun onResponse(
@@ -68,11 +73,13 @@ class ViewModelFilm : ViewModel() {
                             deleteFilm.postValue(null)
                         }
                         callApiFilm()
+                        loading.postValue(false)
                     }
 
                     override fun onFailure(call: Call<Int>, t: Throwable) {
                         deleteFilm.postValue(null)
                         callApiFilm()
+                        loading.postValue(false)
                     }
                 })
         }
