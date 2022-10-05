@@ -30,18 +30,22 @@ class MainActivity : AppCompatActivity() {
 
     private fun setVmToAdapter() {
         val viewModel =ViewModelProvider(this).get(ViewModelFilm::class.java)
+
         viewModel.getliveDataFilm().observe(this, Observer {
             filmAdapter = AdapterFilm(it)
+
             viewModel.loading.observe(this, Observer {
                 when(it){
                     true -> binding.progressBarMain.visibility = View.VISIBLE
                     false -> binding.progressBarMain.visibility = View.GONE
                 }
             })
+
             if (it != null) {
                 binding.rvFilm.layoutManager = LinearLayoutManager(
                     this, LinearLayoutManager.VERTICAL, false
                 )
+
                 filmAdapter = AdapterFilm(it)
                 binding.rvFilm.adapter = filmAdapter
 
@@ -58,7 +62,7 @@ class MainActivity : AppCompatActivity() {
                     })
                 }
                 filmAdapter.notifyDataSetChanged()
-            }else{
+            } else {
                 Toast.makeText(this, "There is no data to show", Toast.LENGTH_SHORT).show()
             }
 
@@ -69,6 +73,7 @@ class MainActivity : AppCompatActivity() {
                 intent.putExtra("det", getData)
                 startActivity(intent)
             }
+
         })
         viewModel.callApiFilm()
     }

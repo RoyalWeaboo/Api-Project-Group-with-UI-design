@@ -15,7 +15,6 @@ class AdapterFilm (var listFilm : List<RestponseDataFilmItem>): RecyclerView.Ada
     var onEdit : ((RestponseDataFilmItem)->Unit)? = null
     var onDetail : ((RestponseDataFilmItem)->Unit)? = null
 
-
     class ViewHolder(var binding : ItemFilmBinding): RecyclerView.ViewHolder(binding.root) {
 
     }
