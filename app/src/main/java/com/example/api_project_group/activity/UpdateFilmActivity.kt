@@ -26,9 +26,11 @@ class UpdateFilmActivity : AppCompatActivity() {
             var filmDirector = binding.directorEditInput.text.toString()
             var filmPict = binding.pictureEditInput.text.toString()
             var filmDesc = binding.descEditInput.text.toString()
-
+                
             updateDataFilm(fetId, filmName, filmDirector, filmPict, filmDesc)
-            finish()
+//            finish()
+            val pindah = Intent(this, MainActivity::class.java)
+            startActivity(pindah)
         }
     }
 

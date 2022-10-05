@@ -12,7 +12,7 @@ interface RestfulAPIFilm {
     @GET("film")
     fun getAllFilm() : Call<List<RestponseDataFilmItem>>
 
-    @GET("admin/car/{id}")
+    @GET("film/{id}")
     fun getDetailFilm(@Path("id") id : Int): Call<List<RestponseDataFilmItem>>
 
     @DELETE("film/{id}")
