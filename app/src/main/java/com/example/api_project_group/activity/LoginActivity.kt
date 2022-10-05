@@ -63,6 +63,13 @@ class LoginActivity : AppCompatActivity() {
                         for (i in 0 until respon!!.size){
                             if(respon[i].username.equals(username) && respon[i].password.equals(password)){
                                 data = true
+
+                                //add ke sharedpref
+                                var addUser = sharedpref.edit()
+                                addUser.putString("username", username)
+                                addUser.putString("password", password)
+                                addUser.apply()
+
                                 toast("Login Success!")
                                 var pinda = Intent(this@LoginActivity, MainActivity::class.java)
                                 startActivity(pinda)
