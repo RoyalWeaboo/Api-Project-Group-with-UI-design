@@ -1,77 +1,46 @@
 package com.example.api_project_group.adapter
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.api_project_group.activity.DetailFIlmActivity
+import com.example.api_project_group.databinding.ItemFilmBinding
 import com.example.api_project_group.model.RestponseDataFilmItem
 
-class FilmAdapter(var listFilm: List<ResponseDataFilmItem>): RecyclerView.Adapter<CarAdapter.ViewHolder>() {
+class FilmAdapter(var listFilm: List<RestponseDataFilmItem>): RecyclerView.Adapter<FilmAdapter.ViewHolder>() {
 
-    var onDelete : ((ResponseDataCarItem)->Unit)? = null
-    var onEdit : ((PutCarResponse)->Unit)? = null
-    var onDetail : ((ResponseDataCarItem)->Unit)? = null
+    var onDelete : ((RestponseDataFilmItem)->Unit)? = null
+    var onDetail : ((RestponseDataFilmItem)->Unit)? = null
 
-//    private var dataCar : List<ResponseDataCarItem>? = null
-//    fun setDataCar(car : List<ResponseDataCarItem>){
-//        this.dataCar = car
-//    }
-
-    class ViewHolder(var binding : ItemCarBinding): RecyclerView.ViewHolder(binding.root) {
+    class ViewHolder(var binding : ItemFilmBinding): RecyclerView.ViewHolder(binding.root) {
 
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CarAdapter.ViewHolder {
-        var view = ItemCarBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FilmAdapter.ViewHolder {
+        var view = ItemFilmBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return  ViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: CarAdapter.ViewHolder, @SuppressLint("RecyclerView") position: Int) {
-        holder.binding.nameCar.text = listcar!![position].name
-        holder.binding.categoryCar.text = listcar!![position].category
-        holder.binding.priceCar.text = listcar!![position].price.toString()
-        Glide.with(holder.itemView.context).load(listcar!![position].image).into(holder.binding.imgCar)
+    override fun onBindViewHolder(holder: FilmAdapter.ViewHolder, @SuppressLint("RecyclerView") position: Int) {
+        holder.binding.textItemName.text = listFilm!![position].name
+        holder.binding.textItemDate.text = listFilm!![position].date
+        Glide.with(holder.itemView.context).load(listFilm!![position].image).into(holder.binding.imageItemFilm)
 
-        holder.binding.deleteCar.setOnClickListener(object : View.OnClickListener{
-            override fun onClick(v: View?) {
-                val bun = Bundle()
-                bun.putString("id", listcar[position].id.toString())
-            }
-        })
-
-//        holder.binding.klikDetail.setOnClickListener(object : View.OnClickListener{
-//            override fun onClick(v: View?) {
-//                val bun = Bundle()
-//                bun.putString("detail", listcar[position].toString())
-//            }
-//
-//        })
-
-        holder.binding.klikDetail.setOnClickListener{
-            var a = Bundle()
-            val inten = Intent(it.context, DetailCarActivity::class.java)
-            a.putInt("okedetail", listcar[position].id)
-            inten.putExtras(a)
-            it.context.startActivity(inten)
+        holder.binding.cardItemFilm.setOnClickListener{
+            var bundle = Bundle()
+            val intent = Intent(it.context, DetailFIlmActivity::class.java)
+            bundle.putInt("detail", listFilm[position].id)
+            intent.putExtras(bundle)
+            it.context.startActivity(intent)
         }
 
-        holder.binding.editCar.setOnClickListener {
-            var edit = Intent(it.context, UpdateCarActivity::class.java)
-            edit.putExtra("update", listcar[position].id)
-            it.context.startActivity(edit)
-        }
     }
 
     override fun getItemCount(): Int {
-
-        return listcar.size
-//        if (dataCar == null){
-//            return 0
-//        }else{
-//            return  dataCar!!.size
-//        }
+        return listFilm.size
     }
 }
