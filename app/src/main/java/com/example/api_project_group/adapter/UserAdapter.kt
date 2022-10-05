@@ -3,6 +3,7 @@ package com.example.api_project_group.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.api_project_group.model.ResponseDataUserItem
 import com.example.api_project_group.databinding.ActivityLoginBinding
 import com.example.api_project_group.model.ResponseDataUserItem
 
