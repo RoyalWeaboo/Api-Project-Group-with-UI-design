@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp"
+    tools:context=".activity.UpdateFilmActivity"
+    android:orientation="vertical">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/nameEdit"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:errorEnabled="true"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="160dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/nameEdit_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Name of Film"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/directorEdit"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:errorEnabled="true"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="160dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/directorEdit_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Director"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/pictureEdit"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:errorEnabled="true"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="160dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/pictureEdit_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Image Link"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/descEdit"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:errorEnabled="true"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="160dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/descEdit_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Description"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/btnUpdate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Update Film"
+        app:icon="@drawable/ic_edit"
+        style="@style/Widget.MaterialComponents.Button.Icon" />
+
+</LinearLayout>
