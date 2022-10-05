@@ -11,6 +11,9 @@ interface RestfulAPIFilm {
     @GET("film")
     fun getAllFilm() : Call<List<RestponseDataFilmItem>>
 
+    @GET("admin/car/{id}")
+    fun getDetailFilm(@Path("id") id : Int): Call<List<RestponseDataFilmItem>>
+
     @DELETE("film/{id}")
     fun deleteFilm(@Path("id") id : Int) : Call<Int>
 

@@ -63,6 +63,26 @@ class ViewModelFilm : ViewModel() {
         }
     }
 
+    fun callDetailApiFilm(id : Int){
+        RetrofitFilm.instance.getDetailFilm(id)
+            .enqueue(object : Callback<List<RestponseDataFilmItem>>{
+                override fun onResponse(
+                    call: Call<List<RestponseDataFilmItem>>,
+                    response: Response<List<RestponseDataFilmItem>>
+                ) {
+                    if (response.isSuccessful){
+                        liveDataFilm.postValue(response.body())
+                    }else{
+                        liveDataFilm.postValue(null)
+                    }
+                }
+
+                override fun onFailure(call: Call<List<RestponseDataFilmItem>>, t: Throwable) {
+                    liveDataFilm.postValue(null)
+                }
+
+            })
+    }
 
     fun callDeleteFilm(id: Int) {
         GlobalScope.async {

@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.mainToolbar.setTitle("List Film")
+        binding.mainToolbar.setTitle("Kumpulan Film")
 
         setVmToAdapter()
 
@@ -79,7 +79,18 @@ class MainActivity : AppCompatActivity() {
             }
 
         })
+
         viewModel.callApiFilm()
+    }
+
+    private fun oke(){
+        filmAdapter.onDetail ={
+            var getData = it
+            var intent = Intent(this, DetailFilmActivity::class.java)
+            intent.putExtra("det", getData)
+            startActivity(intent)
+        }
+
     }
 
 }
