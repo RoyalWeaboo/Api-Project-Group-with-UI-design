@@ -10,7 +10,7 @@
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:background="@color/green_lilbitneon"
+        android:background="#FFFFFF"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".activity.SplashActivity">
@@ -24,7 +24,23 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_margin="100dp"
-                android:src="@drawable/img_splash" />
+                android:src="@drawable/production" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ProgressBar
+                    android:id="@+id/progressBar2"
+                    style="?android:attr/progressBarStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="32dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
         </FrameLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
