@@ -1,10 +1,12 @@
 package com.example.api_project_group.network
 
 import com.example.api_project_group.model.Film
-import com.example.api_project_group.model.PutFilmResponseItem
 import com.example.api_project_group.model.RestponseDataFilmItem
 import retrofit2.Call
-import retrofit2.http.*
+import retrofit2.http.Body
+import retrofit2.http.DELETE
+import retrofit2.http.GET
+import retrofit2.http.Path
 
 
 interface RestfulAPIFilm {
@@ -12,6 +14,6 @@ interface RestfulAPIFilm {
     @GET("film")
     fun getAllFilm() : Call<List<RestponseDataFilmItem>>
 
-    @PUT("film/{id}")
-    fun updateDataFilm(@Path("id") id : Int, @Body request : Film) : Call<List<PutFilmResponseItem>>
+    @DELETE("film/{id}")
+    fun deleteFilm(@Path("id") id : Int) : Call<Int>
 }

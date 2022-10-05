@@ -38,4 +38,5 @@ class UserAdapter(var listUser : List<ResponseDataUserItem>): RecyclerView.Adapt
     }
 
     override fun getItemCount(): Int = listUser.size
+
 }

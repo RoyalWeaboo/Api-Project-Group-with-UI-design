@@ -56,16 +56,26 @@ class LoginActivity : AppCompatActivity() {
     fun requestLogin(username:String, password:String){
         RetrofitClientUser.instance.getAllUser().enqueue(object : Callback<List<ResponseDataUserItem>>{
             override fun onResponse(call: Call<List<ResponseDataUserItem>>, response: Response<List<ResponseDataUserItem>>) {
+                var data = false
                 if(response.isSuccessful){
                     if(response.body() != null){
                         val respon = response.body()
                         for (i in 0 until respon!!.size){
                             if(respon[i].username.equals(username) && respon[i].password.equals(password)){
+                                data = true
+
+                                //add ke sharedpref
+                                var addUser = sharedpref.edit()
+                                addUser.putString("username", username)
+                                addUser.putString("password", password)
+                                addUser.apply()
+
                                 toast("Login Success!")
                                 var pinda = Intent(this@LoginActivity, MainActivity::class.java)
                                 startActivity(pinda)
                             }
                         }
+                        if(data == false) toast("Wrong Username or Password!")
                     }
                     else toast("Empty Response!")
                 }

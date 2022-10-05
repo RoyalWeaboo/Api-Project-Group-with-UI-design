@@ -13,14 +13,11 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.ApiProjectGroup"
+        android:theme="@style/Theme.ApiProjectGroup.NoActionBar"
         tools:targetApi="31">
         <activity
-            android:name=".UpdateFilmActivity"
+            android:name=".activity.UpdateFilmActivity"
             android:exported="false" />
-        <activity
-            android:name=".activity.ListFilmActivity"
-            android:exported="true"></activity>
         <activity
             android:name=".activity.DetailFilmActivity"
             android:exported="false" />
