@@ -1,5 +1,14 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Api-Project-Group</string>
-    <string name="text_item_name">Motion Graphic: 3 Cara Istiqomah dalam Berhijrah - Ustadz Muhammad Nuzul Dzikri, Lc</string>
-    <string name="text_item_date">Date : 2022–10-03T03:36:48.089Z</string>
+    <string name="titleAdd">Add Film</string>
+    <string name="etAdd_name">Name of Film</string>
+    <string name="etAdd_director">Director</string>
+    <string name="etAdd_img">Image Url</string>
+    <string name="etAdd_desc">Description</string>
+    <string name="btnAdd">Add Data</string>
+    <string name="titleUpdate">Update Film</string>
+    <string name="btnUpdate">Update Data</string>
+    <string name="text_item_name">Title</string>
+    <string name="text_item_date">Date</string>
+    <string name="toolbarTitle">Film List</string>
 </resources>

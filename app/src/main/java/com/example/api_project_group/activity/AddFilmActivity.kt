@@ -32,10 +32,10 @@ class AddFilmActivity : AppCompatActivity() {
 
 
     fun postCar(){
-        var name = binding.name.text.toString()
-        var director = binding.director.text.toString()
-        var image = binding.image.text.toString()
-        var description = binding.description.text.toString()
+        var name = binding.name.resources.toString()
+        var director = binding.director.resources.toString()
+        var image = binding.image.resources.toString()
+        var description = binding.description.resources.toString()
 
 
         val viewModel = ViewModelProvider(this).get(ViewModelFilm::class.java)

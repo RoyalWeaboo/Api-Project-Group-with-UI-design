@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Api-Project-Group</string>
+    <string name="text_item_name">Judul</string>
+    <string name="text_item_date">Tanggal</string>
+    <string name="titleAdd">Tambah Film</string>
+    <string name="etAdd_name">Nama Film</string>
+    <string name="etAdd_director">Sutradara</string>
+    <string name="etAdd_img">Url Gambar</string>
+    <string name="etAdd_desc">Deskripsi</string>
+    <string name="btnAdd">Tambah Data</string>
+    <string name="titleUpdate">Perbarui Film</string>
+    <string name="btnUpdate">Perbarui Data</string>
+    <string name="toolbarTitle">Kumpulan Film</string>
+</resources>

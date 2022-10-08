@@ -10,8 +10,8 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class ViewModelUser : ViewModel() {
-    lateinit var liveDataUser : MutableLiveData<List<ResponseDataUserItem>>
-    lateinit var postLDUser : MutableLiveData<ResponseDataUserItem>
+    var liveDataUser : MutableLiveData<List<ResponseDataUserItem>>
+    var postLDUser : MutableLiveData<ResponseDataUserItem>
 
     init {
         liveDataUser = MutableLiveData()

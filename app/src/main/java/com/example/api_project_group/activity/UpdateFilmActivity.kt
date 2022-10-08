@@ -20,12 +20,12 @@ class UpdateFilmActivity : AppCompatActivity() {
         binding = ActivityUpdateFilmBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.btnUpdate.setOnClickListener {
+        binding.btnUpdateFilm.setOnClickListener {
             var fetId = intent.getIntExtra("update", 0)
-            var filmName = binding.nameEditInput.text.toString()
-            var filmDirector = binding.directorEditInput.text.toString()
-            var filmPict = binding.pictureEditInput.text.toString()
-            var filmDesc = binding.descEditInput.text.toString()
+            var filmName = binding.name.resources.toString()
+            var filmDirector = binding.director.resources.toString()
+            var filmPict = binding.image.resources.toString()
+            var filmDesc = binding.description.resources.toString()
                 
             updateDataFilm(fetId, filmName, filmDirector, filmPict, filmDesc)
 //            finish()
